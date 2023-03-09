@@ -89,7 +89,7 @@ namespace Estudantes.Repositorio
                                 LEFT JOIN [Degrees] dgre on dgre.DegreeId = stu.StudentId
                                 LEFT JOIN [ClassStandings] clss on clss.ClassStandingCode = stu.ClassStandingCode
                                 LEFT JOIN [Terms] tr on tr.TermCode = stu.EnrollmentTerm
-                                WHERE [StudentId] = @studentId;";
+                                WHERE stu.[StudentId] = @id;";
 
 
             estudante = Db.QueryFirstOrDefault<EstudanteComInformacoesRelacionaisDTO>(comandoSql, new { id = studentId });
